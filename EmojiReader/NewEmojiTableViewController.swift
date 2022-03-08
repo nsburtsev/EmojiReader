@@ -20,7 +20,7 @@ class NewEmojiTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
         updateSaveButtonState()
     }
     
@@ -31,6 +31,13 @@ class NewEmojiTableViewController: UITableViewController {
         let descriptionText = descriptionTextField.text ?? ""
         
         saveButton.isEnabled = !emojiText.isEmpty && !nameText.isEmpty && !descriptionText.isEmpty
+    }
+    
+    //Обновление интерфейса
+    private func updateUI() {
+        emojiTextField.text = emoji.emoji
+        nameTextField.text = emoji.name
+        descriptionTextField.text = emoji.description
     }
     
     //Action для всех текстовых полей
