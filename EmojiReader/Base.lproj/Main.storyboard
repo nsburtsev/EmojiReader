@@ -182,8 +182,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Ovm-FY-SJ0">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bzf-qJ-rA8"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FC9-0l-vhD"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bzf-qJ-rA8">
+                            <connections>
+                                <segue destination="Ljk-Y7-9e9" kind="unwind" unwindAction="unwindSegueWithSegue:" id="dSC-yb-xLA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FC9-0l-vhD">
+                            <connections>
+                                <segue destination="Ljk-Y7-9e9" kind="unwind" identifier="saveSegue" unwindAction="unwindSegueWithSegue:" id="eyn-ks-Vzq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="KhD-zD-O9a" id="0Kb-Ud-Xcc"/>
@@ -193,6 +201,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Slb-wn-3qQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ljk-Y7-9e9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2573.913043478261" y="154.6875"/>
         </scene>
